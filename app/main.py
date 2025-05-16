@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.post("/predict")
 def predict(data: PredictionInput):
-    return predict_glucose(data.values)
+    return {"predicted": predict_glucose(data.values)}
 
 @app.get("/")
 def root():
